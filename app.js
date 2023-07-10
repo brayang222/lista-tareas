@@ -1,7 +1,7 @@
 const input = document.getElementById('ingresar-tarea');
-const btn = document.querySelector('button');
-const listTarea = document.getElementById('lista-tareas')
-const nTarea = document.getElementById('n-tareas')
+const btn = document.querySelector('.aggTarea');
+const listTarea = document.getElementById('lista-tareas');
+const nTarea = document.getElementById('n-tareas');
 let number = 0; 
 
 function agragarTarea() {
@@ -41,10 +41,12 @@ function agragarTarea() {
     
   } else {
     alert('Ingresa una tarea')
+    number--;
   }
+
   number++;
   nTarea.innerHTML = number;
-  input.value = "";
+  //input.value = "";
 }
 
 function completarTarea(e) {
@@ -71,6 +73,60 @@ function editarTarea(e) {
   }
   
 }
+
+const btnHechas = document.getElementById('hechas');
+const btnPendientes = document.getElementById('pendientes');
+const btnTodas = document.getElementById('todas');
+const elementos = Array.from(listTarea.querySelectorAll('.completada'));
+const tareas = document.getElementsByClassName('tarea')
+let completada;
+
+
+btnHechas.addEventListener('click', () => {
+  for (let i = 0; i < tareas.length; i++) {
+    const tarea = tareas[i];
+  if (tarea.classList.contains('completada')) {
+    tarea.classList.remove('hidden')
+  }
+  if (!tarea.classList.contains('completada')) {
+    tarea.classList.add('hidden')
+  } else {
+     completada = true;
+  } 
+
+}
+if (!completada) {
+  alert('No se encontraron tareas completadas.')
+}
+
+})
+btnPendientes.addEventListener('click', () => {
+  for (let i = 0; i < tareas.length; i++) {
+    const tarea = tareas[i];
+  if (!tarea.classList.contains('completada')) {
+    tarea.classList.remove('hidden')
+  }
+  if (tarea.classList.contains('completada')) {
+    tarea.classList.add('hidden')
+  } else {
+     completada = true;
+  } 
+  
+}
+if (!completada) {
+  alert('No se encontraron tareas pendientes.')
+}
+})
+
+btnTodas.addEventListener('click', () => {
+  for (let i = 0; i < tareas.length; i++) {
+    const tarea = tareas[i];
+    tarea.classList.remove('hidden')
+  }
+})
+
+
+
 
 
 btn.addEventListener('click', agragarTarea);

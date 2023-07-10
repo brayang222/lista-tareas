@@ -12,15 +12,42 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 0;
-  background: url(imagenes/fondo.jpg) no-repeat center center/cover;
+  background-color: black;
+}
+
+.container {
+  box-shadow: 0px 1px 15px 1px #581845c3;
+  padding-top: 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+nav {
+  position: sticky;
+}
+
+.btns {
+  justify-content: space-around;
+ display: flex;
+ flex-direction: row;
+  margin-bottom: 20px;
+  background-color: black;
+  margin: 0 50px;
+}
+
+#todas, #hechas, #pendientes {
+
+  background-color:  #58184576 !important;
 }
 
 .contenedor {
   width: 700px;
   min-height: 500px;
-  background-color: white;
+  color: whitesmoke;
+  background-color: black;
   padding: 40px;
-  border: 5px solid black;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +56,7 @@ body {
 }
 
 h1 {
+  text-shadow: 1px 1px 15px whitesmoke;
   font-size: 50px;
   font-weight: bold;
 }
@@ -43,17 +71,24 @@ input {
   border-radius: 10px;
 }
 
-button {
+.aggTarea, #todas, #hechas, #pendientes {
   width: 150px;
   height: 60px;
   padding: 10px;
   color: white;
-  background-color: #1312a8;
+  background-color: #414141b8;
+  color: #ffffff;
   font-size: 22px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
   user-select: none;
+}
+
+.aggTarea:hover {
+  background-color: #ffffffb8;
+  color: black;
+  border: 1px solid #414141b8;
 }
 
 #lista-tareas {
@@ -68,7 +103,7 @@ button {
   padding: 10px;
   margin-top: 10px;
   color: white;
-  background-color: #407ba6;
+  background-color: #58184576;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
@@ -79,7 +114,7 @@ button {
 
 .tarea.completada {
   text-decoration: line-through;
-  background-color: black;
+  background-color: #222222;
   border: none;
 }
 
@@ -93,11 +128,7 @@ i {
   cursor: pointer;
 }
 
-.icono-completar {
-  color: rgb(0, 255, 0);
-}
-
-.icono-eliminar {
+.icono-eliminar, .icono-completar  {
   color: white;
 }
 

@@ -12,15 +12,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+  <nav>
+    <div class="btns">
+      <button id="todas">
+        Todas
+      </button>
+      <button id="pendientes">
+        Pendientes
+      </button>
+      <button id="hechas">  
+        Hechas
+      </button>
+    </div>
+  </nav>
   <main class="contenedor">
     <h1>Mis Tareas</h1> 
     <div class="flex"><h3>N# Tareas = <h3 id="n-tareas"> </h3></h3></div>
     <input id="ingresar-tarea" placeholder="ingresa una tarea">
-    <button type="submit">Crear Tarea</button>
+    <button class="aggTarea" type="submit">Crear Tarea</button>
     <div id="lista-tareas">
 
     </div>
   </main>
-  <script src="app.js"></script>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
