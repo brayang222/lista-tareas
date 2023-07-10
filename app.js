@@ -46,7 +46,7 @@ function agragarTarea() {
 
   number++;
   nTarea.innerHTML = number;
-  //input.value = "";
+  input.value = "";
 }
 
 function completarTarea(e) {
